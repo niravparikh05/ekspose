@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ekspose-controller
+  name: ekspose-controller
+  namespace: eksposens
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ekspose-controller
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ekspose-controller
+    spec:
+      containers:
+      - image: niravparikh05/ekspose:v0.0.3
+        name: ekspose
+        resources: {}
+status: {}
